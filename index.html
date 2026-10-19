@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A free, practical system design learning roadmap with 17 modules, examples, and tests.">
+  <title>Absolute Bonkers — System Design Roadmap</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #172033;
+      --muted: #56627a;
+      --line: #dce3ee;
+      --surface: #fff;
+      --canvas: #f4f7fb;
+      --accent: #5b4bdb;
+      --accent-dark: #352b9a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--canvas);
+      font: 16px/1.6 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    a { color: var(--accent-dark); }
+    a:focus-visible { outline: 3px solid #f2b84b; outline-offset: 3px; }
+    .wrap { width: min(1080px, calc(100% - 2rem)); margin: 0 auto; }
+    header { padding: 4.5rem 0 3rem; color: white; background: #171b37; }
+    header .eyebrow { color: #c5c2ff; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+    h1 { max-width: 760px; margin: .5rem 0 1rem; font-size: clamp(2.5rem, 6vw, 4.5rem); line-height: 1.05; }
+    header p { max-width: 720px; color: #e1e4f4; font-size: 1.15rem; }
+    .actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.5rem; }
+    .button { display: inline-block; padding: .65rem 1rem; border: 1px solid #a8a2ff; border-radius: .6rem; color: white; font-weight: 700; text-decoration: none; }
+    .button.primary { border-color: #c5c2ff; color: #171b37; background: #c5c2ff; }
+    main { padding: 2.5rem 0 4rem; }
+    .intro { display: grid; grid-template-columns: 2fr 1fr; gap: 1.5rem; align-items: stretch; margin-bottom: 2rem; }
+    .panel, .module { border: 1px solid var(--line); border-radius: .8rem; background: var(--surface); }
+    .panel { padding: 1.25rem 1.5rem; }
+    .panel h2, .group h2 { margin-top: 0; }
+    .stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: .75rem; }
+    .stat { padding: 1rem; border-radius: .6rem; background: #f0efff; text-align: center; }
+    .stat strong { display: block; color: var(--accent-dark); font-size: 1.7rem; }
+    .group { margin: 2rem 0; }
+    .group > p { margin-top: -.5rem; color: var(--muted); }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: .9rem; }
+    .module { display: block; min-height: 125px; padding: 1rem 1.1rem; color: inherit; text-decoration: none; transition: border-color .15s, transform .15s; }
+    .module:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .module .number { color: var(--accent); font-size: .85rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
+    .module h3 { margin: .25rem 0; font-size: 1.05rem; }
+    .module p { margin: 0; color: var(--muted); font-size: .93rem; }
+    .community { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: .9rem; }
+    footer { padding: 1.5rem 0; border-top: 1px solid var(--line); color: var(--muted); }
+    @media (max-width: 680px) { .intro { grid-template-columns: 1fr; } header { padding: 3rem 0 2rem; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <div class="eyebrow">Free, open learning roadmap</div>
+      <h1>Design systems that work in the real world.</h1>
+      <p>Learn system design one topic at a time through concise guides, practical examples, and tests. Start with the foundations, then follow the modules in order—or jump to the topic you need.</p>
+      <nav class="actions" aria-label="Primary links">
+        <a class="button primary" href="#roadmap">Explore the roadmap</a>
+        <a class="button" href="https://github.com/absolute-bonkers/.github/blob/main/CONTRIBUTING.md">Contribute</a>
+        <a class="button" href="https://github.com/absolute-bonkers/system-design-interview-prep/discussions">Ask and discuss</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <section class="intro" aria-label="About the roadmap">
+      <div class="panel">
+        <h2>Learn by building understanding</h2>
+        <p>Each module has one canonical repository with its topics organized inside. Most modules include runnable examples and tests. The case studies and interview-prep modules focus on architecture exercises and learning tools.</p>
+        <p>All material is free to read and use under the repositories' MIT licenses.</p>
+      </div>
+      <div class="panel stats" aria-label="Roadmap size">
+        <div class="stat"><strong>17</strong>modules</div>
+        <div class="stat"><strong>163</strong>topics</div>
+      </div>
+    </section>
+
+    <section id="roadmap" aria-labelledby="roadmap-title">
+      <h2 id="roadmap-title">The learning path</h2>
+      <section class="group" aria-labelledby="foundations-title">
+        <h2 id="foundations-title">01 · Foundations</h2>
+        <p>Build vocabulary, code quality, and architectural judgment.</p>
+        <div class="grid">
+          <a class="module" href="https://github.com/absolute-bonkers/design-patterns"><span class="number">Module 01</span><h3>Design Patterns</h3><p>All 23 GoF patterns with examples and tests.</p></a>
+          <a class="module" href="https://github.com/absolute-bonkers/solid-principles"><span class="number">Module 02</span><h3>SOLID Principles</h3><p>Five principles for maintainable object-oriented design.</p></a>
+          <a class="module" href="https://github.com/absolute-bonkers/clean-code"><span class="number">Module 03</span><h3>Clean Code</h3><p>Readable code, refactoring, and common code smells.</p></a>
+          <a class="module" href="https://github.com/absolute-bonkers/architectural-patterns"><span class="number">Module 04</span><h3>Architectural Patterns</h3><p>Architecture styles, boundaries, and data flow.</p></a>
+        </div>
+      </section>
+      <section class="group" aria-labelledby="interfaces-title">
+        <h2 id="interfaces-title">02 · Interfaces and data</h2>
+        <p>Design the APIs, stores, and communication paths that connect systems.</p>
+        <div class="grid">
+          <a class="module" href="https://github.com/absolute-bonkers/api-design-communication"><span class="number">Module 05</span><h3>API Design &amp; Communication</h3><p>REST, GraphQL, gRPC, WebSockets, gateways, and more.</p></a>
+          <a class="module" href="https://github.com/absolute-bonkers/database-design-storage"><span class="number">Module 06</span><h3>Database Design &amp; Storage</h3><p>Data models, consistency, indexing, and storage workloads.</p></a>
+          <a class="module" href="https://github.com/absolute-bonkers/caching"><span class="number">Module 07</span><h3>Caching</h3><p>Cache placement, policies, invalidation, and resilience.</p></a>
+          <a class="module" href="https://github.com/absolute-bonkers/messaging-async-communication"><span class="number">Module 08</span><h3>Messaging &amp; Async Communication</h3><p>Queues, streams, delivery, and event-driven workflows.</p></a>
+        </div>
+      </section>
+      <section class="group" aria-labelledby="systems-title">
+        <h2 id="systems-title">03 · Systems engineering</h2>
+        <p>Scale, secure, observe, and keep distributed systems reliable.</p>
+        <div class="grid">
+          <a class="module" href="https://github.com/absolute-bonkers/networking-protocols"><span class="number">Module 09</span><h3>Networking &amp; Protocols</h3><p>Network fundamentals, HTTP, DNS, TLS, and realtime systems.</p></a>
+          <a class="module" href="https://github.com/absolute-bonkers/scalability-performance"><span class="number">Module 10</span><h3>Scalability &amp; Performance</h3><p>Capacity, latency, balancing, and scale strategies.</p></a>
+          <a class="module" href="https://github.com/absolute-bonkers/reliability-fault-tolerance"><span class="number">Module 11</span><h3>Reliability &amp; Fault Tolerance</h3><p>Resilience patterns, recovery, and graceful degradation.</p></a>
+          <a class="module" href="https://github.com/absolute-bonkers/distributed-systems"><span class="number">Module 12</span><h3>Distributed Systems</h3><p>Consensus, clocks, replication, and coordination.</p></a>
+          <a class="module" href="https://github.com/absolute-bonkers/system-design-security"><span class="number">Module 13</span><h3>Security</h3><p>Application security, identity, and defense in depth.</p></a>
+          <a class="module" href="https://github.com/absolute-bonkers/observability-monitoring"><span class="number">Module 14</span><h3>Observability &amp; Monitoring</h3><p>Logs, metrics, traces, alerts, and service objectives.</p></a>
+        </div>
+      </section>
+      <section class="group" aria-labelledby="practice-title">
+        <h2 id="practice-title">04 · Delivery and practice</h2>
+        <p>Apply the ideas in delivery workflows, case studies, and interviews.</p>
+        <div class="grid">
+          <a class="module" href="https://github.com/absolute-bonkers/devops-cicd"><span class="number">Module 15</span><h3>DevOps &amp; CI/CD</h3><p>Automation, deployment strategies, and operations.</p></a>
+          <a class="module" href="https://github.com/absolute-bonkers/system-design-case-studies"><span class="number">Module 16</span><h3>System Design Case Studies</h3><p>Architecture case studies and trade-off analyses.</p></a>
+          <a class="module" href="https://github.com/absolute-bonkers/system-design-interview-prep"><span class="number">Module 17</span><h3>System Design Interview Prep</h3><p>Frameworks, estimation, practice, and feedback.</p></a>
+        </div>
+      </section>
+    </section>
+
+    <section class="group" aria-labelledby="community-title">
+      <h2 id="community-title">Learn with the community</h2>
+      <div class="community">
+        <div class="panel"><h3>Ask a question</h3><p>Share a learning question or start a system-design discussion.</p><a href="https://github.com/absolute-bonkers/system-design-interview-prep/discussions">Open Discussions</a></div>
+        <div class="panel"><h3>Improve a module</h3><p>Suggest a topic, correct a guide, or add a tested example.</p><a href="https://github.com/absolute-bonkers/.github/blob/main/CONTRIBUTING.md">Read the contribution guide</a></div>
+        <div class="panel"><h3>Find a first contribution</h3><p>Browse beginner-friendly issues across the repositories.</p><a href="https://github.com/search?q=org%3Aabsolute-bonkers+is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22&type=issues">Search good first issues</a></div>
+      </div>
+    </section>
+  </main>
+  <footer><div class="wrap">Maintained by <a href="https://github.com/absolute-bonkers">Absolute Bonkers</a> · Open learning, MIT licensed.</div></footer>
+</body>
+</html>
